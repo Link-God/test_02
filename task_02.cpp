@@ -7,34 +7,20 @@ using namespace std;
 void revers(int * array, int size)
 {
 	unsigned int k = size - 1;
-	if (size == 2) 
+	for (int i = 0; i < (size / 2) ; i++)
 	{
-		swap(array[0], array[k]);
-	}
-	else
-	{
-		for (int i = 0; i < (size / 2) - 1; i++)
-		{
-			swap(array[i], array[k]);
-			k--;
-		}
+		swap(array[i], array[k]);
+		k--;
 	}
 }
 void revers_two(int * array, int size,int sdvig)
 {
 	unsigned int k = size - 1;
-	if (size - sdvig == 2)
+	for (int i = sdvig; i < ((size - sdvig) / 2) + sdvig ; i++)
 	{
-		swap(array[k-1], array[k]);
-	}
-	else 
-	{
-		for (int i = sdvig; i < ((size - sdvig) / 2) + sdvig; i++)
-		{
 
-			swap(array[i], array[k]);
-			k--;
-		}
+		swap(array[i], array[k]);
+		k--;
 	}
 }
 bool read(int * array, int size)
@@ -101,8 +87,8 @@ int main()
 		if (read(array, size)&& sdv(sdvig))
 		{
 			revers(array, sdvig); 
-			revers_two(array, size, sdvig); 
-			revers(array, size);
+			revers_two(array, size, sdvig);
+			revers(array, size); 
 			print(array, size);
 			cin.get();
 		}
