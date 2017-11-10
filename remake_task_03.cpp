@@ -220,7 +220,7 @@ int main()
 	int sdvig; 
 	bool suc_creat=false;
 	int **matrix = nullptr;
-	if (read_numb_elements(str, col))
+	if (read_numb_elements(str, col) && str>0 && col > 0)
 	{
 		if (str == 1 || col==1) 
 		{
