@@ -1,4 +1,4 @@
-// исправил ошибку при сдвиге не квадратных матриц
+// исправил ошибку не квадратных матриц
 #include"stdafx.h"
 #include<iostream>
 #include<sstream>
@@ -286,6 +286,7 @@ int main()
 						if (str_size == 1 && col_size == 1){ }
 						else if (str_size == 1)
 						{
+							sdvig = sdvig % col_size;
 							int * array;
 							array = new int[col_size];
 							for (int b = 0; b < col_size; b++) { array[b] = matrix[i1][j1+b]; }
@@ -297,6 +298,7 @@ int main()
 						}
 						else if (col_size == 1)
 						{
+							sdvig = sdvig % str_size;
 							int * array;
 							array = new int[str_size];
 							for (int b = 0; b < str_size; b++) { array[b] = matrix[i1+b][j1]; }
