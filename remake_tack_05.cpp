@@ -1,4 +1,5 @@
 // исправил ошибку не квадратных матриц
+// позже исправил если сдвиг больше размера строки или столбца
 #include"stdafx.h"
 #include<iostream>
 #include<sstream>
@@ -247,6 +248,7 @@ int main()
 				array = new int[col];
 				if (read_str(array, col) && read_sdvig(sdvig))
 				{
+					sdvig = sdvig % col;
 					print_martix_str(array, col, sdvig);
 				}
 				else
@@ -261,6 +263,7 @@ int main()
 				if (read(matrix, str, col) && read_sdvig(sdvig))
 				{
 					suc_creat = true;
+					sdvig = sdvig % str;
 					print_matrix_col(matrix, col, str, sdvig);
 				}
 				else
