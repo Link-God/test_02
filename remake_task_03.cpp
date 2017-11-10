@@ -1,5 +1,5 @@
 // исправил когда еденичная матрица , или столбец , или строка
-
+// позже еще добавил когда сдвиг больше размера массива строки или столбца
 #include"stdafx.h"
 #include<iostream>
 #include<sstream>
@@ -186,6 +186,7 @@ void print_str(int * array, int size)
 
 void martix_str(int * array ,unsigned int col,int sdvig)
 {
+		sdvig = sdvig % col;
 		revers(array, sdvig);
 		revers_two(array, col, sdvig);
 		revers(array, col);
@@ -195,6 +196,7 @@ void martix_str(int * array ,unsigned int col,int sdvig)
 
 void print_matrix_col(int ** matrix, unsigned int col,unsigned int str,int sdvig)
 {
+	sdvig = sdvig % str;
 	for (int i = sdvig; i < str; i++)
 	{
 		cout << endl;
